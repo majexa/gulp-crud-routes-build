@@ -1,0 +1,23 @@
+{
+  "name": "gulp-crud-routes-build",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majexa/gulp-crud-routes-build.git"
+  },
+  "author": "Andre Yartsev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/majexa/gulp-crud-routes-build/issues"
+  },
+  "homepage": "https://github.com/majexa/gulp-crud-routes-build#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "through2": "^2.0.3"
+  }
+}
