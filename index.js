@@ -19,8 +19,16 @@ module.exports = function (opt) {
       result += '\n';
     }
     result += ');\n';
-    console.log('Stored: ' + opt.routersFolder + '/' + name + '.js');
-    fs.writeFileSync(opt.routersFolder + '/' + name + '.js', result);
-    cb();
+
+    var mkdirp = require('mkdirp');
+    mkdirp(opt.routersFolder, function (err) {
+      if (err) console.error(err)
+      else {
+        console.log('Stored: ' + opt.routersFolder + '/' + name + '.js');
+        fs.writeFileSync(opt.routersFolder + '/' + name + '.js', result);
+      }
+      cb();
+    });
+
   });
 };
