@@ -14,5 +14,6 @@ module.exports = function (opt) {
     }
     result += '});\n';
     fs.writeFileSync(opt.routersFolder + '/' + name + '.js', result);
+    cb();
   });
 };
