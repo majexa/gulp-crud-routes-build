@@ -12,7 +12,14 @@ module.exports = function (opt) {
       if (i != fields.length - 1) result += ',';
       result += '\n';
     }
-    result += '});\n';
+    result += '}';
+    if (opt.opt) {
+      result += ',\n';
+      result += JSON.stringify(opt.opt);
+      result += '\n';
+    }
+    result += ');\n';
+    console.log('Stored: ' + opt.routersFolder + '/' + name + '.js');
     fs.writeFileSync(opt.routersFolder + '/' + name + '.js', result);
     cb();
   });
