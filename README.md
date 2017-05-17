@@ -1,5 +1,7 @@
 # gulp-crud-routes-build
 
+![Current Version](https://img.shields.io/npm/v/gulp-crud-routes-build.svg)
+
 ## Usage:
 
 ```javascript
