@@ -8,6 +8,7 @@ module.exports = function (opt) {
     var fields = JSON.parse(fs.readFileSync(file.path, 'utf8'));
     var result = "module.exports = require('hapi-ngn-grid-mongoose-crud')('" + name + "', {\n";
     for (var i = 0; i < fields.length; i++) {
+      if (fields[i].formOnly) continue;
       result += '  ' + fields[i].name + ": '" + fields[i].title + "'";
       if (i != fields.length - 1) result += ',';
       result += '\n';
@@ -19,7 +20,6 @@ module.exports = function (opt) {
       result += '\n';
     }
     result += ');\n';
-
     var mkdirp = require('mkdirp');
     mkdirp(opt.routersFolder, function (err) {
       if (err) console.error(err)
@@ -29,6 +29,5 @@ module.exports = function (opt) {
       }
       cb();
     });
-
   });
 };
